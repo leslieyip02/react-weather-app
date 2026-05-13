@@ -1,11 +1,12 @@
+import type { Layer } from "leaflet";
+import { useState } from "react";
+import { TiWeatherCloudy, TiWeatherDownpour } from "react-icons/ti";
 import { MapContainer, TileLayer, GeoJSON, Tooltip } from "react-leaflet"
-import "leaflet/dist/leaflet.css"
 
 import type { AreaForecast } from "~/data/weather-data"
 import { AREA_FEATURES, type FeatureProperties } from "~/data/map-data";
-import { useState } from "react";
-import type { Layer } from "leaflet";
-import { TiWeatherCloudy, TiWeatherDownpour } from "react-icons/ti";
+
+import "leaflet/dist/leaflet.css"
 
 type WeatherMapProps = {
   forecasts: AreaForecast[];
