@@ -3,7 +3,7 @@ import type { Route } from "./+types/home";
 import WeatherCard from "~/components/weather-card";
 import { useWeather } from "~/context/weather-context";
 
-export function meta({ }: Route.MetaArgs) {
+export function meta(_: Route.MetaArgs) {
   return [
     { title: "Weather App" },
     { name: "description", content: "Welcome to the Weather App!" },
@@ -12,8 +12,8 @@ export function meta({ }: Route.MetaArgs) {
 
 export default function Home() {
   const headerStyle = {
-    fontSize: '32px',
-    fontWeight: 'bold',
+    fontSize: "32px",
+    fontWeight: "bold",
   };
 
   const { forecasts, favorites, toggleFavorite } = useWeather();
@@ -30,9 +30,7 @@ export default function Home() {
           onToggleFavorite={toggleFavorite}
         />
       ))}
-      <Link to="/about">
-        About This App
-      </Link>
+      <Link to="/about">About This App</Link>
     </div>
   );
 }

@@ -15,12 +15,12 @@ export function WeatherProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     fetch("https://api-open.data.gov.sg/v2/real-time/api/two-hr-forecast")
-      .then(res => res.json())
-      .then(json => setForecasts(json.data.items[0].forecasts))
+      .then((res) => res.json())
+      .then((json) => setForecasts(json.data.items[0].forecasts));
   }, []);
 
   const toggleFavorite = (area: string) => {
-    setFavorites(prev => {
+    setFavorites((prev) => {
       if (prev.includes(area)) {
         return prev.filter((fav) => fav !== area);
       }
