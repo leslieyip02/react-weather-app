@@ -21,6 +21,19 @@ export default function Home() {
   return (
     <div>
       <h1 style={headerStyle}>Weather App</h1>
+      <div className="my-4">
+        <Link to="/about">
+          <button>
+            About This App
+          </button>
+        </Link>
+        <Link to="/map" state={{ forecasts: forecasts }}>
+          <button>
+            Map
+          </button>
+        </Link>
+      </div>
+
       <p>You have {favorites.length} favorite locations.</p>
       {forecasts.map((forecast) => (
         <WeatherCard
@@ -30,9 +43,6 @@ export default function Home() {
           onToggleFavorite={toggleFavorite}
         />
       ))}
-      <Link to="/about">
-        About This App
-      </Link>
     </div>
   );
 }
